@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Next
+{% endblock %}
+
+{% block headline %}
+{{title}}
+{% endblock %}
+
+{% block content %}
+<p>{{message}}</p>
+<form method="POST" action="/hello/">
+    <input type="text" name="send" value="{{send}}"> 
+    <input type="submit">
+</form>
+{% endblock %}
+
+{% block footer %}
+copyright 2021 YT
+{% endblock %}
