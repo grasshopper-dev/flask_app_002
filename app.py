@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def index():
-    return render_template('index.html', title="Index", message='Hello! This is Bootstrap sample.')
+    return render_template('index.html', title="Index", message='※Vue.js')
 
 @app.route('/', methods=['POST'])
 def form():

@@ -9,7 +9,25 @@ Index
 {% endblock %}
 
 {% block content %}
-<p>{{message}}</p>
+<div class="mb-3" id="msg">{{message}}</div>
+<!-- Vue.js container -->
+{% raw %}
+<div id="app" class="m-5">
+    <h2>{{vue_msg}}</h2>
+</div>
+{% endraw %}
+
+<!-- Vue.js script -->
+<script>
+    // start vue
+    new Vue({
+        el:'#app',
+        data:{
+            vue_msg: 'This is Vue.js!!'
+        }
+    });
+</script>
+
 {% endblock %}
 
 {% block footer %}
