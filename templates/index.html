@@ -10,21 +10,31 @@ Index
 
 {% block content %}
 <div class="mb-3" id="msg">{{message}}</div>
+
 <!-- Vue.js container -->
-{% raw %}
 <div id="app" class="m-5">
-    <h2>{{vue_msg}}</h2>
+    <mycomp/>
 </div>
+
+<!-- mycomp7s template -->
+{% raw %}
+<script type="text/x-template" id="mycomp-template">
+    <p class="alert alert-primary h5">
+        Hello! This is My-Componet!
+    </p>
+</script>
 {% endraw %}
 
 <!-- Vue.js script -->
 <script>
+    // mycomp object
+    Vue.component('mycomp',{
+        template: '#mycomp-template',
+    });
+
     // start vue
     new Vue({
         el:'#app',
-        data:{
-            vue_msg: 'This is Vue.js!!'
-        }
     });
 </script>
 
