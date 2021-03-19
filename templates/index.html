@@ -16,11 +16,11 @@ Index
     <mycomp/>
 </div>
 
-<!-- mycomp7s template -->
+<!-- mycomp's template -->
 {% raw %}
 <script type="text/x-template" id="mycomp-template">
     <p class="alert alert-primary h5">
-        Hello! This is My-Componet!
+        {{msg}}
     </p>
 </script>
 {% endraw %}
@@ -30,6 +30,9 @@ Index
     // mycomp object
     Vue.component('mycomp',{
         template: '#mycomp-template',
+        data:function(){
+            return { msg: "This is Mycomp-component!" }
+        }
     });
 
     // start vue
