@@ -13,37 +13,27 @@ Index
 
 <!-- Vue.js container -->
 <div id="app" class="m-5">
-    <mycomp/>
+    <mycomp name="Hanako" msg="This is my first message. hum..."/>
 </div>
 
 <!-- mycomp's template -->
 {% raw %}
 <script type="text/x-template" id="mycomp-template">
-    <div>
-        <p class="alert alert-primary h5">
-            Hello! This is My-Component!
+    <div class="alert alert-primary">
+        <p class="h5">
+            Hi! I'm {{name}}.
         </p>
-        <ul class="list-group">
-            <li class="list-group-item list-group-item-warning h5">
-                * data list *
-            </li>
-            <li v-for="item in data" class="list-group-item">
-                {{item}}
-            </li>
-        </ul>
+        <p>{{msg}}</p>
     </div>
 </script>
 {% endraw %}
 
 <!-- Vue.js script -->
 <script>
-    var d = eval({{data|tojson}});
     // mycomp object
     Vue.component('mycomp',{
         template: '#mycomp-template',
-        data:function(){
-            return { data: d }
-        }
+        props:['name', 'msg'],
     });
 
     // start vue
